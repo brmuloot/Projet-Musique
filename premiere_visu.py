@@ -3,11 +3,7 @@ from sqlite3 import Error
 
 
 def create_connection(db_file):
-    """ create a database connection to the SQLite database
-        specified by db_file
-    :param db_file: database file
-    :return: Connection object or None
-    """
+
     conn = None
     try:
         conn = sqlite3.connect(db_file)
@@ -51,6 +47,7 @@ def main():
             popularity.append(row[4])
         print(follower)
         print(popularity)
+        
         plt.scatter(follower, popularity)
         plt.xlabel("nombre de followers")
         plt.ylabel("popularity")
@@ -58,20 +55,6 @@ def main():
 
 
         
-        # compteur = 0
-        # test = []
-        # for row in rows:
-        #     x=rows[compteur]
-            
-        #     test.append(x)
-        #     compteur += 1
-        # print(test)
-
-        
-
-
-
-
 
 if __name__ == '__main__':
     main()
