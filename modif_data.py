@@ -13,6 +13,10 @@ def create_connection(db_file):
     return conn
 
 def update_task(conn, task):
+    #### mettre à jour la priorité, la date_debut et la date de fin d'une tâche
+    #### :param conn:
+    #### :param task:
+    #### :return: l'id du projet
     """
     update priority, begin_date, and end date of a task
     :param conn:
@@ -32,7 +36,6 @@ def update_task(conn, task):
 def main():
     database = r"D:\sqlite\db\pythonsqlite.db"
 
-    # create a database connection
     conn = create_connection(database)
     with conn:
         update_task(conn, (2, '2015-01-04', '2015-01-06', 2))
