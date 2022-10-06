@@ -3,11 +3,7 @@ from sqlite3 import Error
 
 
 def create_connection(db_file):
-    """ create a database connection to the SQLite database
-        specified by the db_file
-    :param db_file: database file
-    :return: Connection object or None
-    """
+
     conn = None
     try:
         conn = sqlite3.connect(db_file)
@@ -18,12 +14,11 @@ def create_connection(db_file):
 
 
 def delete_task(conn, id):
-    """
-    Delete a task by task id
-    :param conn:  Connection to the SQLite database
-    :param id: id of the task
-    :return:
-    """
+    #### Supprime une tâche par task id
+    #### :param conn: Connection à la base de donnée SQLite
+    #### :param id: l'id de task
+    #### :return:
+
     sql = 'DELETE FROM tasks WHERE id=?'
     cur = conn.cursor()
     cur.execute(sql, (id,))
@@ -31,11 +26,10 @@ def delete_task(conn, id):
 
 
 def delete_all_tasks(conn):
-    """
-    Delete all rows in the tasks table
-    :param conn: Connection to the SQLite database
-    :return:
-    """
+    #### Supprime toute les lignes de la table tasks
+    #### :param conn:
+    #### :return:
+
     sql = 'DELETE FROM tasks'
     cur = conn.cursor()
     cur.execute(sql)
