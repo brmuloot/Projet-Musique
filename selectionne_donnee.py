@@ -14,11 +14,10 @@ def create_connection(db_file):
 
 
 def select_all_tasks(conn):
-    """
-    Query all rows in the tasks table
-    :param conn: the Connection object
-    :return:
-    """
+    #### Interroger toutes les lignes de la table tasks
+    ####:param conn: la connection à l'objet
+    ####:return:
+    
     cur = conn.cursor()
     cur.execute("SELECT * FROM tasks")
 
@@ -29,12 +28,11 @@ def select_all_tasks(conn):
 
 
 def select_task_by_priority(conn, priority):
-    """
-    Query tasks by priority
-    :param conn: the Connection object
-    :param priority:
-    :return:
-    """
+    #### Interroge tasks par priorité
+    #### :param conn: la connection à l'objet
+    #### :param priority:
+    #### :return:
+
     cur = conn.cursor()
     cur.execute("SELECT * FROM tasks WHERE priority=?", (priority,))
 
