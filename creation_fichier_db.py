@@ -3,7 +3,7 @@ from sqlite3 import Error
 
 
 def create_connection(db_file):
-    """ create a database connection to a SQLite database """
+    #### Créé une connection de la base de donnée vers une base de donnée SQLite
     conn = None
     try:
         conn = sqlite3.connect(db_file)
